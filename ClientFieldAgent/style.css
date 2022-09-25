@@ -26,7 +26,7 @@ h1 {
 }
 
 body {
-  background-color: rgb(39, 40, 41);
+  background-color: rgb(38, 41, 43);
   color: rgb(40, 138, 156);
   font-weight: 500;
   font-size: 1.0rem;
@@ -34,7 +34,6 @@ body {
 
 .addButton {
   margin: 2rem 0;
-  color:rgb(40, 138, 156);
   background-color:rgb(18, 19, 19);
 }
 

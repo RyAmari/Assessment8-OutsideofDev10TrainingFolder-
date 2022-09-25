@@ -47,6 +47,7 @@ function renderAgents() {
             <th>Middle-Last Name</th>
             <th>Date of Birth</th>
             <th>Height</th>
+            <th>Functions</th>
           </tr>
         </thead> <tbody class="table-group-divider">`;
   for (let agent of allAgents) {
@@ -58,10 +59,10 @@ function renderAgents() {
             <td>${agent.dob}</td>
             <td>${agent.heightInInches}</td>
             <td>
-              <button type="button" onclick="handleEditAgent(${agent.id})" class="btn btn-primary btn-sm">Edit</button>
+              <button type="button" onclick="handleEditAgent(${agent.agentId})" class="btn btn-primary btn-sm">Edit</button>
             </td>
             <td>
-              <button type="button" onclick="handleDeleteAgent(${agent.id})" class="btn btn-danger btn-sm">
+              <button type="button" onclick="handleDeleteAgent(${agent.agentId})" class="btn btn-danger btn-sm">
                 Delete
               </button>
             </td>
@@ -100,7 +101,7 @@ async function handleSubmit(evt) {
     init.method = 'PUT';
 
     const response = await fetch(
-      `http://localhost:8080/api/agent/${agent.id}`,
+      `http://localhost:8080/api/agent/${agent.agentId}`,
       init
     );
     if (response.status === 204) {
@@ -141,11 +142,10 @@ function handleAddAgent() {
   setView('form');
 }
 
-function handleEditAgent(id) {
-  currentAgentId = id;
-  const agent = allAgents.find((a) => a.id === id);
+function handleEditAgent(agentId) {
+  currentAgentId = agentId;
+  const agent = allAgents.find((agent) => agent.agentId === agentId);
 
-  id: currentAgentId,
     document.getElementById('firstName').value = agent.firstName;
     document.getElementById('middleName').value = agent.middleName;
     document.getElementById('lastName').value = agent.lastName;
@@ -155,15 +155,15 @@ function handleEditAgent(id) {
   setView('form');
 }
 
-function handleDeleteAgent(id) {
-  currentAgentId = id;
-  const agent = allAgents.find((a) => a.id === id);
+function handleDeleteAgent(agentId) {
+  currentAgentId = agentId;
+  const agent = allAgents.find((agent) => agent.agentId === agentId);
 
   document.getElementById('firstNameLabel').innerHTML = agent.firstName;
   document.getElementById('middleNameLabel').innerHTML = agent.middleName;
   document.getElementById('lastNameLabel').innerHTML = agent.lastName;
   document.getElementById('dobLabel').innerHTML = agent.dob;
-  document.getElementById('heightLabel').innerHTML = agent.heightInInches;
+  document.getElementById('heightInInchesLabel').innerHTML = agent.heightInInches;
 
   setView('delete');
 }
