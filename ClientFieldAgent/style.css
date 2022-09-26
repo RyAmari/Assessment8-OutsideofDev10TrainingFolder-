@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+#addAgent {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#agentList {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+#confirmDelete {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+header {
+  margin: 1rem auto;
+  text-align: center;
+  padding: 2rem 0;
+  font-family: 'Oswald';
+}
+
+h1 {
+  font-size: 100px;
+}
+
+body {
+  background-color: rgb(38, 41, 43); 
+  color: rgb(40, 138, 156);
+  font-weight: 500;
+  font-size: 1.0rem;
+}
+
+.addButton {
+  margin: 2rem 0;
+  background-color:rgb(18, 19, 19);
+}
+
+footer {
+  text-align: center;
+  position: absolute;
+  height: 2.5rem;
+  width: 100%;
+  bottom: 0; 
+}
