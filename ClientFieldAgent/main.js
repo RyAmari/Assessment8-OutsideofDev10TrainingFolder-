@@ -57,7 +57,7 @@ function renderAgents() {
             <td>${agent.firstName}</td>
             <td>${agent.middleName}-${agent.lastName}</td>
             <td>${agent.dob}</td>
-            <td>${agent.heightInInches}</td>
+            <td>${agent.heightInInches}</td> 
             <td>
               <button type="button" onclick="handleEditAgent(${agent.agentId})" class="btn btn-primary btn-sm">Edit</button>
             </td>
