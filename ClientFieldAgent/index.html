@@ -21,6 +21,7 @@
         <section class="agentDisplay container-fluid" id="agentDisplay">
           <div class="col text-center">
             <h2>Agent List</h2>
+            <div id="errors" style="display: none" class="alert alert-info"></div>
             <button
               class="addButton btn btn-success btn-lg"
               onclick="handleAddAgent()"
@@ -88,6 +89,7 @@
       <div id="confirmDelete" style="display: none">
         <section class="allAgents">
           <h2>Confirm Deletion:</h2>
+          <div id="errors" style="display: none" class="alert alert-info"></div>
           <ul>
             <li>Name: <span id="firstNameLabel"></span></li>
             <li>Middle Name: <span id="middleNameLabel"></span></li>

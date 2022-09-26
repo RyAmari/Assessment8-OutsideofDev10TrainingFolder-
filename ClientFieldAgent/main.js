@@ -55,8 +55,8 @@ function renderAgents() {
           <tr>
             <td>${agent.agentId}</td>
             <td>${agent.firstName}</td>
-            <td>${agent.middleName}-${agent.lastName}</td>
-            <td>${agent.dob}</td>
+            <td>${agent.middleName ? agent.middleName: "not available"}-${agent.lastName ? agent.lastName: "not available"}</td>
+            <td>${agent.dob ? agent.dob : "not available"}</td>
             <td>${agent.heightInInches}</td>
             <td>
               <button type="button" onclick="handleEditAgent(${agent.agentId})" class="btn btn-primary btn-sm">Edit</button>
@@ -178,7 +178,7 @@ async function handleConfirmDelete() {
   } else if (response.status === 404) {
     displayErrors(['agent not found.']);
   } else {
-    console.error('something unexpected happened.');
+    displayErrors(['something unexpected happened.']);
   }
   setView('table');
 }
