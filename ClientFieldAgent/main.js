@@ -193,6 +193,6 @@ function displayErrors(errors) {
     document.getElementById('errors').innerHTML = html;
     document.getElementById('errors').style.display = 'block';
   }
-}
+} 
 
 init();
